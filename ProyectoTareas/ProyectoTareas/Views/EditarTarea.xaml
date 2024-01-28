@@ -1,63 +1,68 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoTareas.Views.EditarTarea">
+             x:Class="ProyectoTareas.Views.EditarTarea"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#EAEDEC">
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="20" BackgroundColor="#EAEDEC">
+        <StackLayout Padding="20" Margin="0,60" Spacing="20" BackgroundColor="#EAEDEC">
+
             <Label Text="Editar Tarea"
                    FontSize="30"
                    FontAttributes="Bold"
-                   TextColor="#FD8298"
+                   TextColor="Black"
                    HorizontalOptions="Center"/>
 
-            <StackLayout>
-                <Label Text="Número de Tarea"
-                       FontSize="18"
-                       TextColor="#555555"
-                       IsVisible="False"/>
-                <Entry Placeholder="Ingrese el número de tarea"
-                       PlaceholderColor="Black"
-                       Keyboard="Numeric"
-                       FontSize="16"
-                       TextColor="Black"
-                       Text="{Binding NroTarea}"
-                       HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White"         
-                       Margin="0,0,0,10"
-                       IsVisible="False"/>
-                
-            </StackLayout>
+            <Frame IsVisible="False" BackgroundColor="White" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+                <StackLayout IsVisible="False">
+                    <Entry Placeholder="Ingrese el número de tarea"
+                           PlaceholderColor="#BDBDBD"
+                           Keyboard="Numeric"
+                           FontSize="16"
+                           TextColor="#333333"
+                           Text="{Binding NroTarea}"
+                           HorizontalOptions="FillAndExpand"
+                           BackgroundColor="White"
+                           Margin="0,0,0,10"
+                           IsVisible="False"/>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Nombre de la Tarea"
-                       FontSize="18"
-                       TextColor="#555555"/>
-                <Entry Placeholder="Ingrese el nombre de la tarea"
-                       FontSize="16"
-                       TextColor="Black"
-                       Text="{Binding Nombre}"
-                       PlaceholderColor="Gray"
-                       HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White"
-                       Margin="0,0,0,10"/>
-            </StackLayout>
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+                <StackLayout>
+                    <Label Text="Nombre de la Tarea"
+                           FontSize="18"
+                           TextColor="#333333"/>
+                    <Entry Placeholder="Ingrese el nombre de la tarea"
+                           FontSize="16"
+                           TextColor="#333333"
+                           Text="{Binding Nombre}"
+                           PlaceholderColor="#BDBDBD"
+                           HorizontalOptions="FillAndExpand"
+                           BackgroundColor="White"
+                           Margin="0,0,0,10"/>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Estado"
-                       FontSize="18"
-                       TextColor="#555555"/>
-                <Picker Title="Seleccione el estado"
-                        FontSize="16"
-                        TextColor="Black"
-                        ItemsSource="{Binding Estados}"
-                        SelectedItem="{Binding SelectedEstado}"
-                        HorizontalOptions="FillAndExpand"
-                        BackgroundColor="White"
-                        Margin="0,0,0,10"/>
-            </StackLayout>
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+                <StackLayout>
+                    <Label Text="Estado"
+                           FontSize="18"
+                           TextColor="#333333"/>
+                    <Picker Title="Seleccione el estado"
+                            FontSize="16"
+                            TextColor="#333333"
+                            ItemsSource="{Binding Estados}"
+                            SelectedItem="{Binding SelectedEstado}"
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="White"
+                            Margin="0,0,0,10"/>
+                </StackLayout>
+            </Frame>
+
             <Button Text="Guardar Cambios"
                     Command="{Binding Editarcommand}"
-                    BackgroundColor="#FFD755"
+                    BackgroundColor="DimGray"
+                    BorderColor="Black"
                     TextColor="White"
                     FontSize="18"
                     CornerRadius="10"
@@ -65,7 +70,7 @@
 
             <Button Text="Cancelar"
                     Command="{Binding Volvercommand}"
-                    BackgroundColor="#FD8298"
+                    BackgroundColor="#E57373"
                     TextColor="White"
                     FontSize="18"
                     CornerRadius="10"

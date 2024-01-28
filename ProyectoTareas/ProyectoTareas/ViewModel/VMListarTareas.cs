@@ -69,7 +69,7 @@ namespace ProyectoTareas.ViewModel
             if (!_Cronometro)
             {
                 _Cronometro = true;
-                Device.StartTimer(TimeSpan.FromSeconds(10), () =>
+                Device.StartTimer(TimeSpan.FromSeconds(30), () =>
                 {
                     ChecarElDatoVIVAMLO();
                     return _Cronometro;

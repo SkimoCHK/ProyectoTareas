@@ -93,7 +93,7 @@ namespace ProyectoTareas.ViewModel
 
             private void CargarEstados()
             {
-                Estados = new ObservableCollection<string> { "Sin empezar", "En proceso", "Finalizada" };
+                Estados = new ObservableCollection<string> { "Sin empezar", "En proceso" };
                 SelectedEstado = Estados[0];
             }
 

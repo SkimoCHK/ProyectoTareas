@@ -5,6 +5,8 @@
              xmlns:sombras="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
              BackgroundColor="#EAEDEC"
              NavigationPage.HasNavigationBar="False">
+    
+    
     <StackLayout>
         <Label Text="Tareas a realizar"
                HorizontalOptions="Center"

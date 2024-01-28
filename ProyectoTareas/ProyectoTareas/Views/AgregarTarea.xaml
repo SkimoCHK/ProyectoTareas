@@ -1,48 +1,50 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoTareas.Views.AgregarTarea">
+             x:Class="ProyectoTareas.Views.AgregarTarea"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#EAEDEC">
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="20" BackgroundColor="#EAEDEC">
+        <StackLayout Padding="20" Margin="0,60" Spacing="20" BackgroundColor="#EAEDEC">
+
             <Label Text="Agregar Tarea"
                    FontSize="30"
                    FontAttributes="Bold"
-                   TextColor="#FD8298"
+                   TextColor="Black"
                    HorizontalOptions="Center"/>
 
-           
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+                <StackLayout>
+                    <Label Text="Nombre de la Tarea"
+                           FontSize="18"
+                           TextColor="#333333"/>
+                    <Entry Placeholder="Ingrese el nombre de la tarea"
+                           FontSize="16"
+                           TextColor="#333333"
+                           Text="{Binding Nombre}"
+                           PlaceholderColor="#BDBDBD"
+                           HorizontalOptions="FillAndExpand"
+                           BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
 
-            <StackLayout>
-                <Label Text="Nombre de la Tarea"
-                       FontSize="18"
-                       TextColor="#555555"/>
-                <Entry Placeholder="Ingrese el nombre de la tarea"
-                       FontSize="16"
-                       TextColor="Black"
-                       Text="{Binding Nombre}"
-                       PlaceholderColor="Gray"
-                       HorizontalOptions="FillAndExpand"
-                       BackgroundColor="White"
-                       Margin="0,0,0,10"/>
-            </StackLayout>
-
-            <StackLayout>
-                <Label Text="Estado"
-                       FontSize="18"
-                       TextColor="#555555"/>
-                <Picker Title="Seleccione el estado"
-                        FontSize="16"
-                        TextColor="Black"
-                        ItemsSource="{Binding Estados}"
-                        SelectedItem="{Binding SelectedEstado}"
-                        HorizontalOptions="FillAndExpand"
-                        BackgroundColor="White"
-                        Margin="0,0,0,10"/>
-            </StackLayout>
+            <Frame BackgroundColor="White" CornerRadius="10" Padding="10" Margin="0,0,0,10">
+                <StackLayout>
+                    <Label Text="Estado"
+                           FontSize="18"
+                           TextColor="#333333"/>
+                    <Picker Title="Seleccione el estado"
+                            FontSize="16"
+                            TextColor="#333333"
+                            ItemsSource="{Binding Estados}"
+                            SelectedItem="{Binding SelectedEstado}"
+                            BackgroundColor="White"/>
+                </StackLayout>
+            </Frame>
 
             <Button Text="Agregar Tarea"
                     Command="{Binding Insertarcommand}"
-                    BackgroundColor="#FFD755"
+                    BackgroundColor="DimGray"
+                    BorderColor="Black"
                     TextColor="White"
                     FontSize="18"
                     CornerRadius="10"
@@ -50,7 +52,7 @@
 
             <Button Text="Volver"
                     Command="{Binding Volvercommand}"
-                    BackgroundColor="#FD8298"
+                    BackgroundColor="#E57373"
                     TextColor="White"
                     FontSize="18"
                     CornerRadius="10"
