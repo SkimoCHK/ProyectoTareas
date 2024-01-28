@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTareas.Views.AgregarTarea">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" BackgroundColor="#EAEDEC">
+            <Label Text="Agregar Tarea"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="#FD8298"
+                   HorizontalOptions="Center"/>
+
+           
+
+            <StackLayout>
+                <Label Text="Nombre de la Tarea"
+                       FontSize="18"
+                       TextColor="#555555"/>
+                <Entry Placeholder="Ingrese el nombre de la tarea"
+                       FontSize="16"
+                       TextColor="Black"
+                       Text="{Binding Nombre}"
+                       PlaceholderColor="Gray"
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="White"
+                       Margin="0,0,0,10"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Estado"
+                       FontSize="18"
+                       TextColor="#555555"/>
+                <Picker Title="Seleccione el estado"
+                        FontSize="16"
+                        TextColor="Black"
+                        ItemsSource="{Binding Estados}"
+                        SelectedItem="{Binding SelectedEstado}"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="White"
+                        Margin="0,0,0,10"/>
+            </StackLayout>
+
+            <Button Text="Agregar Tarea"
+                    Command="{Binding Insertarcommand}"
+                    BackgroundColor="#FFD755"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Volver"
+                    Command="{Binding Volvercommand}"
+                    BackgroundColor="#FD8298"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,10,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

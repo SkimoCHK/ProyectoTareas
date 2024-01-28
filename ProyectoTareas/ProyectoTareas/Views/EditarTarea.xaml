@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoTareas.Views.EditarTarea">
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" BackgroundColor="#EAEDEC">
+            <Label Text="Editar Tarea"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   TextColor="#FD8298"
+                   HorizontalOptions="Center"/>
+
+            <StackLayout>
+                <Label Text="Número de Tarea"
+                       FontSize="18"
+                       TextColor="#555555"
+                       IsVisible="False"/>
+                <Entry Placeholder="Ingrese el número de tarea"
+                       PlaceholderColor="Black"
+                       Keyboard="Numeric"
+                       FontSize="16"
+                       TextColor="Black"
+                       Text="{Binding NroTarea}"
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="White"         
+                       Margin="0,0,0,10"
+                       IsVisible="False"/>
+                
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Nombre de la Tarea"
+                       FontSize="18"
+                       TextColor="#555555"/>
+                <Entry Placeholder="Ingrese el nombre de la tarea"
+                       FontSize="16"
+                       TextColor="Black"
+                       Text="{Binding Nombre}"
+                       PlaceholderColor="Gray"
+                       HorizontalOptions="FillAndExpand"
+                       BackgroundColor="White"
+                       Margin="0,0,0,10"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Estado"
+                       FontSize="18"
+                       TextColor="#555555"/>
+                <Picker Title="Seleccione el estado"
+                        FontSize="16"
+                        TextColor="Black"
+                        ItemsSource="{Binding Estados}"
+                        SelectedItem="{Binding SelectedEstado}"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="White"
+                        Margin="0,0,0,10"/>
+            </StackLayout>
+            <Button Text="Guardar Cambios"
+                    Command="{Binding Editarcommand}"
+                    BackgroundColor="#FFD755"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Cancelar"
+                    Command="{Binding Volvercommand}"
+                    BackgroundColor="#FD8298"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,10,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
